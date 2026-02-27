@@ -1,0 +1,39 @@
+; Engine Configuration File.
+; 9牌-银河往事 - Godot 4.x Project
+
+config_version=5
+
+[application]
+
+config/name="9牌-银河往事"
+config/description="剧情RPG × 创新桌面卡牌游戏"
+run/main_scene="res://src/ui/screens/MainMenu.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://assets/images/icon.png"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
+renderer/rendering_method.mobile="forward_plus"
+
+[autoload]
+
+GameManager="*res://src/core/GameManager.gd"
+EventBus="*res://src/core/EventBus.gd"
+SaveManager="*res://src/core/SaveManager.gd"
+
+[input]
+
+ui_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
