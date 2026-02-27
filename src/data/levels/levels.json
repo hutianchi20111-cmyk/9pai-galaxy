@@ -1,0 +1,159 @@
+{
+  "version": "1.0",
+  "description": "16关关卡数据",
+  "levels": [
+    {
+      "id": 1,
+      "name": "初入酒馆",
+      "initial_cups": 2,
+      "participants": ["player", "bai_guang_ying"],
+      "participant_count": 2,
+      "unlock_character": null,
+      "difficulty": "tutorial"
+    },
+    {
+      "id": 2,
+      "name": "星际商人",
+      "initial_cups": 3,
+      "participants": ["player", "character_A", "bai_guang_ying"],
+      "participant_count": 3,
+      "unlock_character": "character_A",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "name": "流浪武士",
+      "initial_cups": 4,
+      "participants": ["player", "character_B", "character_A", "bai_guang_ying"],
+      "participant_count": 4,
+      "unlock_character": "character_B",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "name": "神秘歌姬",
+      "initial_cups": 4,
+      "participants": ["player", "character_C", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_C",
+      "difficulty": "normal"
+    },
+    {
+      "id": 5,
+      "name": "暗影刺客",
+      "initial_cups": 5,
+      "participants": ["player", "character_D", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_D",
+      "difficulty": "normal"
+    },
+    {
+      "id": 6,
+      "name": "机械师",
+      "initial_cups": 5,
+      "participants": ["player", "character_E", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_E",
+      "difficulty": "normal"
+    },
+    {
+      "id": 7,
+      "name": "星际海盗",
+      "initial_cups": 5,
+      "participants": ["player", "character_F", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_F",
+      "difficulty": "normal"
+    },
+    {
+      "id": 8,
+      "name": "流亡贵族",
+      "initial_cups": 5,
+      "participants": ["player", "character_G", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_G",
+      "difficulty": "normal"
+    },
+    {
+      "id": 9,
+      "name": "外星访客",
+      "initial_cups": 6,
+      "participants": ["player", "character_H", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_H",
+      "difficulty": "hard"
+    },
+    {
+      "id": 10,
+      "name": "时间旅者",
+      "initial_cups": 6,
+      "participants": ["player", "character_I", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_I",
+      "difficulty": "hard"
+    },
+    {
+      "id": 11,
+      "name": "幽灵船长",
+      "initial_cups": 6,
+      "participants": ["player", "character_J", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_J",
+      "difficulty": "hard"
+    },
+    {
+      "id": 12,
+      "name": "星际侦探",
+      "initial_cups": 6,
+      "participants": ["player", "character_K", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_K",
+      "difficulty": "hard"
+    },
+    {
+      "id": 13,
+      "name": "生化人",
+      "initial_cups": 6,
+      "participants": ["player", "character_L", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_L",
+      "difficulty": "hard"
+    },
+    {
+      "id": 14,
+      "name": "维度行者",
+      "initial_cups": 6,
+      "participants": ["player", "character_M", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_M",
+      "difficulty": "expert"
+    },
+    {
+      "id": 15,
+      "name": "宇宙园丁",
+      "initial_cups": 6,
+      "participants": ["player", "character_N", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_N",
+      "difficulty": "expert"
+    },
+    {
+      "id": 16,
+      "name": "终极挑战",
+      "initial_cups": 6,
+      "participants": ["player", "character_O", "select_2"],
+      "participant_count": 4,
+      "unlock_character": "character_O",
+      "difficulty": "expert",
+      "final": true
+    }
+  ],
+  "rules": {
+    "initial_cups_max": 6,
+    "participant_config": {
+      "level_1": "2人",
+      "level_2": "3人",
+      "level_3_plus": "4人（选2位已解锁）"
+    }
+  }
+}

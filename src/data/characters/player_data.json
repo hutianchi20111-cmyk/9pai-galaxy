@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "description": "玩家属性数据",
+  "player": {
+    "attributes": {
+      "alcohol_capacity": {
+        "description": "酒量",
+        "initial": "关卡决定",
+        "max": 999,
+        "effect": "为0则游戏失败"
+      },
+      "insight": {
+        "description": "洞察",
+        "initial": 1,
+        "max": 999,
+        "effect": "发现NPC特征，辅助抽牌策略"
+      },
+      "attraction": {
+        "description": "吸引",
+        "initial": 1,
+        "max": 999,
+        "effect": "对NPC的吸引力，影响NPC关注度"
+      }
+    },
+    "growth": {
+      "description": "随游戏进度通过解锁剧情提升",
+      "sources": ["剧情解锁", "关卡完成", "钥匙收集"]
+    }
+  }
+}

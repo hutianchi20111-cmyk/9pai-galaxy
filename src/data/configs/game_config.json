@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "game_settings": {
+    "title": "9牌-银河往事",
+    "default_resolution": {
+      "width": 1920,
+      "height": 1080
+    },
+    "min_resolution": {
+      "width": 1280,
+      "height": 720
+    },
+    "aspect_ratio": "16:9"
+  },
+  "gameplay": {
+    "card_pool_size": 9,
+    "base_cards_count": 40,
+    "advanced_cards_count": 16,
+    "advanced_cards_per_round_max": 3,
+    "joker_unique": true,
+    "alcohol_coefficients": {
+      "basic": 1.0,
+      "club": 1.2,
+      "heart": 0.8,
+      "diamond": 1.0,
+      "spade": 1.5
+    },
+    "alcohol_names": {
+      "basic": "基础款",
+      "club": "火星烈酒",
+      "heart": "星云甜酒",
+      "diamond": "小行星啤酒",
+      "spade": "黑洞伏特加"
+    }
+  },
+  "story_keys": {
+    "low": {
+      "name": "酒后胡话",
+      "description": "NPC喝醉后的胡言乱语",
+      "condition": "NPC酒量=0"
+    },
+    "medium": {
+      "name": "好言相告",
+      "description": "NPC清醒时的真诚建议",
+      "condition": "NPC好感度>N且酒量>0"
+    },
+    "high": {
+      "name": "酒后真言",
+      "description": "NPC醉后的真心话",
+      "condition": "NPC好感度>N且酒量=0"
+    }
+  },
+  "endings": {
+    "surface": {
+      "score_range": [0, 29],
+      "name": "表象结局"
+    },
+    "past": {
+      "score_range": [30, 50],
+      "name": "往事结局"
+    },
+    "truth": {
+      "score_range": [51, 999],
+      "name": "真相结局"
+    },
+    "hidden": {
+      "condition": "特定组合",
+      "name": "隐藏结局"
+    }
+  }
+}

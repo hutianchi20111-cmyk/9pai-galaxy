@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "description": "NPC角色数据",
+  "npcs": [
+    {
+      "id": "bai_guang_ying",
+      "name": "白光影",
+      "title": "银河招待所老板娘",
+      "description": "第1关引导型NPC",
+      "avatar": "bai_guang_ying.png",
+      "attributes": {
+        "alcohol_capacity": 15,
+        "decisiveness": "依赖型",
+        "courage": "均衡"
+      },
+      "ai_type": "引导型",
+      "ai_behavior": {
+        "放水": true,
+        "教学提示": true,
+        "低血量降低攻击": true
+      },
+      "unlock_level": 1,
+      "advanced_card": "待分配",
+      "story_key": "白月光的"
+    }
+  ],
+  "attribute_definitions": {
+    "alcohol_capacity": {
+      "description": "酒量",
+      "effect": "为0则喝晕",
+      "initial_range": [10, 20]
+    },
+    "favorability": {
+      "description": "好感度",
+      "effect": "长期属性，周目累积",
+      "persists": true
+    },
+    "decisiveness": {
+      "description": "决断",
+      "types": ["依赖型", "好奇型", "挑战型", "随机型"],
+      "effect": "影响抽到指定/合饮牌时的目标选择"
+    },
+    "courage": {
+      "description": "胆量",
+      "types": ["激进", "均衡", "保守", "投机"],
+      "effect": "依据酒量选择杯数"
+    }
+  },
+  "ai_types": {
+    "引导型": {
+      "description": "第1关白月光",
+      "features": ["故意放水", "教学提示", "低血量降低攻击频率"]
+    },
+    "稳健型": {
+      "description": "商人",
+      "features": ["优先保证生存", "计算最优解", "很少冒险"]
+    },
+    "激进型": {
+      "description": "武士",
+      "features": ["追求一击必杀", "偏好高伤害", "低血量更激进"]
+    },
+    "控制型": {
+      "description": "歌姬",
+      "features": ["施加状态效果", "打断玩家combo", "资源消耗"]
+    }
+  }
+}
