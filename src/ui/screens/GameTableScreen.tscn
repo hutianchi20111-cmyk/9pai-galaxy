@@ -158,20 +158,28 @@ text = "回合: 0"
 [node name="DrawButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1450.0
-offset_top = 600.0
+offset_top = 550.0
 offset_right = 1650.0
-offset_bottom = 660.0
+offset_bottom = 610.0
 theme_override_font_sizes/font_size = 24
 text = "抽牌"
 
 [node name="ItemButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1450.0
-offset_top = 680.0
+offset_top = 630.0
 offset_right = 1650.0
-offset_bottom = 740.0
+offset_bottom = 690.0
 theme_override_font_sizes/font_size = 24
 text = "使用道具"
+
+[node name="ItemContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 720.0
+offset_right = 1700.0
+offset_bottom = 780.0
+theme_override_constants/separation = 10
 
 [node name="ConfirmButton" type="Button" parent="."]
 layout_mode = 0
