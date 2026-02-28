@@ -1,5 +1,10 @@
-; Engine Configuration File.
-; 9牌-银河往事 - Godot 4.6 Project
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
 config_version=5
 
@@ -29,12 +34,6 @@ window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
-[rendering]
-
-renderer/rendering_method="forward_plus"
-renderer/rendering_method.mobile="forward_plus"
-textures/vram_compression/import_etc2_astc=true
-
 [input]
 
 ui_click={
@@ -51,3 +50,8 @@ ui_click={
 [memory]
 
 limits/message_queue/max_size_mb=64
+
+[rendering]
+
+renderer/rendering_method.mobile="forward_plus"
+textures/vram_compression/import_etc2_astc=true
