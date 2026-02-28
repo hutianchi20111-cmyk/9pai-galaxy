@@ -1,7 +1,9 @@
 extends Node
-# 回合管理器
+# 回合管理器 - 全局单例
 
-var participants: Array[CharacterData] = []
+const CharacterData = preload("res://src/characters/CharacterData.gd")
+
+var participants: Array = []
 var current_turn_index: int = 0
 var current_round: int = 0
 
@@ -10,35 +12,46 @@ signal turn_started(character)
 signal turn_ended(character)
 signal all_participants_set
 
-func setup_participants(level_id: int):
+func _ready():
+	print("RoundManager 初始化")
+
+func reset():
 	participants.clear()
+	current_turn_index = 0
+	current_round = 0
+
+func setup_participants(level_id: int):
+	reset()
 	
 	# 添加玩家
-	participants.append(CharacterDB.create_player())
+	var player = CharacterData.new()
+	player.id = "player"
+	player.name = "玩家"
+	player.is_player = true
+	player.alcohol_capacity = 20
+	player.max_alcohol = 20
+	participants.append(player)
 	
-	# 根据关卡添加NPC
-	match level_id:
-		1:
-			# 第1关：1玩家 + 1NPC（白光影）
-			participants.append(CharacterDB.get_npc("bai_guang_ying"))
-		2:
-			# 第2关：1玩家 + 2NPC
-			participants.append(CharacterDB.get_npc("character_A"))
-			participants.append(CharacterDB.get_npc("bai_guang_ying"))
-		_:
-			# 第3关+：1玩家 + 3NPC
-			participants.append(CharacterDB.get_npc("character_A"))
-			participants.append(CharacterDB.get_npc("character_B"))
-			participants.append(CharacterDB.get_npc("bai_guang_ying"))
-	
-	# 过滤掉null的NPC
-	participants = participants.filter(func(p): return p != null)
+	# 添加NPC
+	participants.append(create_npc("npc_a", "NPC A", 12))
+	participants.append(create_npc("npc_b", "NPC B", 10))
+	participants.append(create_npc("npc_c", "NPC C", 11))
 	
 	current_turn_index = 0
 	current_round = 0
 	
 	all_participants_set.emit()
 	print("设置参与者：", participants.size(), "人")
+
+func create_npc(id: String, name: String, alcohol: int):
+	var npc = CharacterData.new()
+	npc.id = id
+	npc.name = name
+	npc.alcohol_capacity = alcohol
+	npc.max_alcohol = alcohol
+	npc.decisiveness = ["依赖型", "好奇型", "挑战型", "随机型"][randi() % 4]
+	npc.courage = ["激进", "均衡", "保守", "投机"][randi() % 4]
+	return npc
 
 func start_round():
 	current_round += 1
@@ -53,7 +66,7 @@ func start_turn():
 	
 	var character = participants[current_turn_index]
 	turn_started.emit(character)
-	print("轮到: ", character.name)
+	print("轮到: ", character.name, " (", "玩家" if character.is_player else "NPC", ")")
 
 func end_turn():
 	if participants.is_empty():
@@ -64,15 +77,11 @@ func end_turn():
 	
 	current_turn_index += 1
 	
-	# 检查是否一轮结束
 	if current_turn_index >= participants.size():
-		# 一轮结束，检查是否有人喝醉
 		if check_anyone_drunk():
 			return
-		# 开始新一轮
 		start_round()
 	else:
-		# 下一个角色
 		start_turn()
 
 func check_anyone_drunk() -> bool:
@@ -83,10 +92,10 @@ func check_anyone_drunk() -> bool:
 			return true
 	return false
 
-func get_current_character() -> CharacterData:
+func get_current_character():
 	if participants.is_empty():
 		return null
 	return participants[current_turn_index]
 
-func get_alive_participants() -> Array[CharacterData]:
+func get_alive_participants() -> Array:
 	return participants.filter(func(p): return not p.is_drunk())

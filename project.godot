@@ -29,6 +29,10 @@ renderer/rendering_method.mobile="forward_plus"
 GameManager="*res://src/core/GameManager.gd"
 EventBus="*res://src/core/EventBus.gd"
 SaveManager="*res://src/core/SaveManager.gd"
+RoundManager="*res://src/gameplay/RoundManager.gd"
+CardDatabase="*res://src/cards/CardDatabase.gd"
+CardExecutor="*res://src/gameplay/CardExecutor.gd"
+CharacterDB="*res://src/characters/CharacterDB.gd"
 
 [input]
 
